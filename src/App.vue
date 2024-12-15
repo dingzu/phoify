@@ -1,30 +1,54 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import TheHeader from './components/TheHeader.vue'
+import TheBanner from './components/TheBanner.vue'
+import ProductFeatures from './components/ProductFeatures.vue'
+import Services from './components/Services.vue'
+import CustomerCases from './components/CustomerCases.vue'
+import TheFooter from './components/TheFooter.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="app">
+    <!-- 头部导航 -->
+    <TheHeader />
+    
+    <!-- Banner区域 -->
+    <TheBanner />
+
+    <!-- 产品功能介绍 -->
+    <section id="features" class="section">
+      <ProductFeatures />
+    </section>
+
+    <!-- 更多服务 -->
+    <section id="services" class="section bg-gray">
+      <Services />
+    </section>
+
+    <!-- 客户案例 -->
+    <section id="cases" class="section">
+      <CustomerCases />
+    </section>
+
+    <!-- 页脚 -->
+    <TheFooter />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 60px;
+  scroll-behavior: smooth;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.section {
+  padding: 80px 0;
+  width: 100%;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.bg-gray {
+  background-color: #f5f5f5;
 }
 </style>
